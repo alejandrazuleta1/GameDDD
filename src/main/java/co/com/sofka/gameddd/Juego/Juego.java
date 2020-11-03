@@ -1,9 +1,9 @@
-package co.com.sofka.gameddd.aggregates;
+package co.com.sofka.gameddd.Juego;
 
 import co.com.sofka.domain.generic.AggregateEvent;
-import co.com.sofka.gameddd.entities.Competencia;
-import co.com.sofka.gameddd.values.JuegoId;
-import co.com.sofka.gameddd.values.Podium;
+import co.com.sofka.gameddd.Juego.entities.Competencia;
+import co.com.sofka.gameddd.Jugadores.values.JuegoId;
+import co.com.sofka.gameddd.Juego.values.Podium;
 
 public class Juego extends AggregateEvent<JuegoId> {
     Competencia competencia;

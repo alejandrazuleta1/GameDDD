@@ -1,4 +1,4 @@
-package co.com.sofka.gameddd.values;
+package co.com.sofka.gameddd.Juego.values;
 
 import co.com.sofka.domain.generic.Identity;
 

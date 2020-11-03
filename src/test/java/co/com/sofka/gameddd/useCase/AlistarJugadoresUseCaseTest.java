@@ -2,15 +2,15 @@ package co.com.sofka.gameddd.useCase;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
-import co.com.sofka.gameddd.comands.AlistarJugadores;
-import co.com.sofka.gameddd.entities.Carro;
-import co.com.sofka.gameddd.entities.Conductor;
-import co.com.sofka.gameddd.events.JugadorAdicionado;
-import co.com.sofka.gameddd.events.JugadoresCreado;
-import co.com.sofka.gameddd.values.IdCarro;
-import co.com.sofka.gameddd.values.IdCompetencia;
-import co.com.sofka.gameddd.values.IdConductor;
-import co.com.sofka.gameddd.values.Recorrido;
+import co.com.sofka.gameddd.Jugadores.comands.AlistarJugadores;
+import co.com.sofka.gameddd.Jugadores.entities.Carro;
+import co.com.sofka.gameddd.Jugadores.entities.Conductor;
+import co.com.sofka.gameddd.Jugadores.events.JugadoresCreado;
+import co.com.sofka.gameddd.Jugadores.useCase.AlistarJugadoresUseCase;
+import co.com.sofka.gameddd.Jugadores.values.IdCarro;
+import co.com.sofka.gameddd.Juego.values.IdCompetencia;
+import co.com.sofka.gameddd.Jugadores.values.IdConductor;
+import co.com.sofka.gameddd.Jugadores.values.Recorrido;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -46,9 +46,9 @@ class AlistarJugadoresUseCaseTest extends  UseCaseHandleBaseTest {
 
         JugadoresCreado jugadoresCreado = (JugadoresCreado) eventCaptor.getAllValues().get(0);
         System.out.println(jugadoresCreado.getIdCompetencia().value());
+
         Assertions.assertEquals("1",jugadoresCreado.getIdCompetencia().value());
         Assertions.assertEquals(3,eventCaptor.getAllValues().size());
-
     }
 
 }

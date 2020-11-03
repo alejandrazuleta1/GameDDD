@@ -1,8 +1,8 @@
-package co.com.sofka.gameddd.entities;
+package co.com.sofka.gameddd.Jugadores.entities;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.sofka.gameddd.values.IdCarro;
-import co.com.sofka.gameddd.values.Recorrido;
+import co.com.sofka.gameddd.Jugadores.values.IdCarro;
+import co.com.sofka.gameddd.Jugadores.values.Recorrido;
 
 import java.util.Objects;
 

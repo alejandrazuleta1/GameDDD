@@ -1,9 +1,9 @@
-package co.com.sofka.gameddd.entities;
+package co.com.sofka.gameddd.Juego.entities;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.sofka.gameddd.values.Carril;
-import co.com.sofka.gameddd.values.IdCompetencia;
-import co.com.sofka.gameddd.values.Meta;
+import co.com.sofka.gameddd.Juego.values.Carril;
+import co.com.sofka.gameddd.Juego.values.IdCompetencia;
+import co.com.sofka.gameddd.Juego.values.Meta;
 
 import java.util.List;
 

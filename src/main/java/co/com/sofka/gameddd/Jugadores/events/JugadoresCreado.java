@@ -1,7 +1,7 @@
-package co.com.sofka.gameddd.events;
+package co.com.sofka.gameddd.Jugadores.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.gameddd.values.IdCompetencia;
+import co.com.sofka.gameddd.Juego.values.IdCompetencia;
 
 public class JugadoresCreado  extends DomainEvent {
 

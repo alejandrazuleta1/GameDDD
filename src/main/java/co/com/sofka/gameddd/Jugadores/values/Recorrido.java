@@ -1,4 +1,4 @@
-package co.com.sofka.gameddd.values;
+package co.com.sofka.gameddd.Jugadores.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 

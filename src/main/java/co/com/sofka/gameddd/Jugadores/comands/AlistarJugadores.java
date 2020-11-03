@@ -1,9 +1,8 @@
-package co.com.sofka.gameddd.comands;
+package co.com.sofka.gameddd.Jugadores.comands;
 
-import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.domain.generic.Command;
-import co.com.sofka.gameddd.entities.Conductor;
-import co.com.sofka.gameddd.values.IdCompetencia;
+import co.com.sofka.gameddd.Jugadores.entities.Conductor;
+import co.com.sofka.gameddd.Juego.values.IdCompetencia;
 
 import java.util.List;
 

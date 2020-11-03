@@ -1,7 +1,7 @@
-package co.com.sofka.gameddd.values;
+package co.com.sofka.gameddd.Juego.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import co.com.sofka.gameddd.entities.Conductor;
+import co.com.sofka.gameddd.Jugadores.entities.Conductor;
 
 import java.util.Objects;
 

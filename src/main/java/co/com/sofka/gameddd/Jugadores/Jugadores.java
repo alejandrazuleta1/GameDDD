@@ -1,17 +1,15 @@
-package co.com.sofka.gameddd.aggregates;
+package co.com.sofka.gameddd.Jugadores;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.gameddd.JugadoresState;
-import co.com.sofka.gameddd.entities.Carro;
-import co.com.sofka.gameddd.entities.Conductor;
-import co.com.sofka.gameddd.events.JugadorAdicionado;
-import co.com.sofka.gameddd.events.JugadoresCreado;
-import co.com.sofka.gameddd.values.IdCompetencia;
-import co.com.sofka.gameddd.values.IdConductor;
-import co.com.sofka.gameddd.values.IdJugadores;
+import co.com.sofka.gameddd.Jugadores.entities.Carro;
+import co.com.sofka.gameddd.Jugadores.entities.Conductor;
+import co.com.sofka.gameddd.Jugadores.events.JugadorAdicionado;
+import co.com.sofka.gameddd.Jugadores.events.JugadoresCreado;
+import co.com.sofka.gameddd.Juego.values.IdCompetencia;
+import co.com.sofka.gameddd.Jugadores.values.IdConductor;
+import co.com.sofka.gameddd.Jugadores.values.IdJugadores;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Jugadores extends AggregateEvent<IdJugadores> {

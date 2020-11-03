@@ -1,9 +1,8 @@
-package co.com.sofka.gameddd.events;
+package co.com.sofka.gameddd.Jugadores.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.gameddd.entities.Carro;
-import co.com.sofka.gameddd.values.IdCarro;
-import co.com.sofka.gameddd.values.IdConductor;
+import co.com.sofka.gameddd.Jugadores.entities.Carro;
+import co.com.sofka.gameddd.Jugadores.values.IdConductor;
 
 public class JugadorAdicionado extends DomainEvent {
     private final IdConductor idConductor;

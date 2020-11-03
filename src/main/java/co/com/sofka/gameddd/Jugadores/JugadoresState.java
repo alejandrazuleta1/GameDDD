@@ -1,11 +1,10 @@
-package co.com.sofka.gameddd;
+package co.com.sofka.gameddd.Jugadores;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.com.sofka.gameddd.aggregates.Jugadores;
-import co.com.sofka.gameddd.entities.Competencia;
-import co.com.sofka.gameddd.entities.Conductor;
-import co.com.sofka.gameddd.events.JugadorAdicionado;
-import co.com.sofka.gameddd.events.JugadoresCreado;
+import co.com.sofka.gameddd.Jugadores.Jugadores;
+import co.com.sofka.gameddd.Jugadores.entities.Conductor;
+import co.com.sofka.gameddd.Jugadores.events.JugadorAdicionado;
+import co.com.sofka.gameddd.Jugadores.events.JugadoresCreado;
 
 import java.util.ArrayList;
 

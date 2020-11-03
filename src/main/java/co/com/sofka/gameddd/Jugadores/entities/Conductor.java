@@ -1,14 +1,14 @@
-package co.com.sofka.gameddd.entities;
+package co.com.sofka.gameddd.Jugadores.entities;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.sofka.gameddd.values.IdConductor;
+import co.com.sofka.gameddd.Jugadores.values.IdConductor;
 
 import java.util.Random;
 
 public class Conductor extends Entity<IdConductor> {
 
     private String nombre;
-    private  Carro carro;
+    private Carro carro;
 
     public Conductor(IdConductor entityId, String nombre, Carro carro) {
         super(entityId);
