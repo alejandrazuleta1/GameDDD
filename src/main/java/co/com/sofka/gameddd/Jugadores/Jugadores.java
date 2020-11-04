@@ -2,11 +2,12 @@ package co.com.sofka.gameddd.Jugadores;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofka.gameddd.Juego.values.IdJuego;
+import co.com.sofka.gameddd.Juego.values.Meta;
+import co.com.sofka.gameddd.Juego.values.Podium;
 import co.com.sofka.gameddd.Jugadores.entities.Carro;
 import co.com.sofka.gameddd.Jugadores.entities.Conductor;
-import co.com.sofka.gameddd.Jugadores.events.JugadorAdicionado;
-import co.com.sofka.gameddd.Jugadores.events.JugadoresCreado;
-import co.com.sofka.gameddd.Juego.values.IdCompetencia;
+import co.com.sofka.gameddd.Jugadores.events.*;
 import co.com.sofka.gameddd.Jugadores.values.IdConductor;
 import co.com.sofka.gameddd.Jugadores.values.IdJugadores;
 
@@ -14,16 +15,20 @@ import java.util.List;
 
 public class Jugadores extends AggregateEvent<IdJugadores> {
     public List<Conductor> conductores;
-    public IdCompetencia idCompetencia;
-
-    public Jugadores(IdJugadores entityId, IdCompetencia idCompetencia) {
-        super(entityId);
-        appendChange(new JugadoresCreado(idCompetencia)).apply();
-    }
 
     private Jugadores(IdJugadores entityId){
         super(entityId);
         subscribe(new JugadoresState(this));
+    }
+
+    public Jugadores(IdJugadores entityId, List<Conductor> conductores) {
+        super(entityId);
+        appendChange(new JugadoresCreado(entityId)).apply();
+    }
+
+    public Jugadores(IdJugadores entityId, Conductor conductorEnturno) {
+        super(entityId);
+        appendChange(new JugadorEnTurnoAsignado(conductorEnturno)).apply();
     }
 
     public void agregarConductor(IdConductor idConductor, String nombre, Carro carro){
@@ -36,5 +41,7 @@ public class Jugadores extends AggregateEvent<IdJugadores> {
         return Jugadores;
     }
 
-
+    public void ejecutarTurno(Conductor conductor, IdJuego idJuego, Meta meta, Podium podium) {
+        appendChange(new TurnoJugado(conductor.Id(), conductor.Nombre(),conductor.Carro().getRecorrido(), idJuego, meta, podium)).apply();
+    }
 }

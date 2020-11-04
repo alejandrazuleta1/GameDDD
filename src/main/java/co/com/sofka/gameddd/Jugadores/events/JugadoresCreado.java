@@ -1,18 +1,18 @@
 package co.com.sofka.gameddd.Jugadores.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.gameddd.Juego.values.IdCompetencia;
+import co.com.sofka.gameddd.Jugadores.values.IdJugadores;
 
 public class JugadoresCreado  extends DomainEvent {
 
-    private final IdCompetencia idCompetencia;
+    private final IdJugadores idJugadores;
 
-    public IdCompetencia getIdCompetencia() {
-        return idCompetencia;
+    public JugadoresCreado(IdJugadores idJugadores) {
+        super("gameddd.Jugadores.events.JugadoresCreado");
+        this.idJugadores = idJugadores;
     }
 
-    public JugadoresCreado(IdCompetencia idCompetencia) {
-        super("gameDDD.JugadoresCreado");
-        this.idCompetencia=idCompetencia;
+    public IdJugadores getIdJugadores() {
+        return idJugadores;
     }
 }

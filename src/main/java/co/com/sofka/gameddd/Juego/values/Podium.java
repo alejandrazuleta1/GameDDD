@@ -1,35 +1,44 @@
 package co.com.sofka.gameddd.Juego.values;
 
 import co.com.sofka.domain.generic.ValueObject;
-import co.com.sofka.gameddd.Jugadores.entities.Conductor;
 
 public class Podium implements ValueObject<Podium.Propiedades> {
 
-    Conductor primerLugar;
-    Conductor segundoLugar;
-    Conductor tercerLugar;
+    String primerLugar;
+    String segundoLugar;
+    String tercerLugar;
+
+    public void agregar(String nombreConductor){
+        if (primerLugar == null){
+            primerLugar = nombreConductor;
+        }else if (segundoLugar == null){
+            segundoLugar = nombreConductor;
+        }else {
+            tercerLugar = nombreConductor;
+        }
+    }
 
     public interface Propiedades {
-        Conductor primerLugar();
-        Conductor segundoLugar();
-        Conductor tercerLugar();
+        String primerLugar();
+        String segundoLugar();
+        String tercerLugar();
     }
 
     @Override
     public Propiedades value() {
         return new Propiedades() {
             @Override
-            public Conductor primerLugar() {
+            public String primerLugar() {
                 return primerLugar;
             }
 
             @Override
-            public Conductor segundoLugar() {
+            public String segundoLugar() {
                 return segundoLugar;
             }
 
             @Override
-            public Conductor tercerLugar() {
+            public String tercerLugar() {
                 return tercerLugar;
             }
         };

@@ -16,6 +16,10 @@ public class Carro extends Entity<IdCarro> {
     }
 
     public void avanzar(Integer distanciaAvanzar){
-        recorrido = new Recorrido(recorrido.value()+distanciaAvanzar);
+        recorrido = new Recorrido(recorrido.value() + distanciaAvanzar);
+    }
+
+    public Recorrido getRecorrido() {
+        return recorrido;
     }
 }

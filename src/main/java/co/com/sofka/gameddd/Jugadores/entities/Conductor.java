@@ -16,7 +16,7 @@ public class Conductor extends Entity<IdConductor> {
         this.nombre = nombre;
     }
 
-    public Integer lanzarDado(){
+    private Integer lanzarDado(){
         var rn = new Random();
         return 1 + rn.nextInt(6 - 1 + 1);
     }
@@ -31,5 +31,9 @@ public class Conductor extends Entity<IdConductor> {
 
     public Carro Carro() {
         return carro;
+    }
+
+    public IdConductor Id() {
+        return this.identity();
     }
 }

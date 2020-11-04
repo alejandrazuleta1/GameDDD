@@ -6,9 +6,7 @@ import co.com.sofka.gameddd.Jugadores.comands.AlistarJugadores;
 import co.com.sofka.gameddd.Jugadores.entities.Carro;
 import co.com.sofka.gameddd.Jugadores.entities.Conductor;
 import co.com.sofka.gameddd.Jugadores.events.JugadoresCreado;
-import co.com.sofka.gameddd.Jugadores.useCase.AlistarJugadoresUseCase;
 import co.com.sofka.gameddd.Jugadores.values.IdCarro;
-import co.com.sofka.gameddd.Juego.values.IdCompetencia;
 import co.com.sofka.gameddd.Jugadores.values.IdConductor;
 import co.com.sofka.gameddd.Jugadores.values.Recorrido;
 import org.junit.jupiter.api.Assertions;
@@ -23,7 +21,6 @@ class AlistarJugadoresUseCaseTest extends  UseCaseHandleBaseTest {
     @Test
     void alistarJugadoresTest(){
         List<Conductor> conductores = new ArrayList<>();
-        IdCompetencia idCompetencia = new IdCompetencia("1");
         conductores.add(new Conductor(
                 new IdConductor("123456"),
                 "Alejandra",
@@ -40,15 +37,17 @@ class AlistarJugadoresUseCaseTest extends  UseCaseHandleBaseTest {
         ));
 
         AlistarJugadoresUseCase useCase = new AlistarJugadoresUseCase();
-        AlistarJugadores alistarJugadores = new AlistarJugadores(conductores,idCompetencia);
-        UseCaseHandler.getInstance().asyncExecutor(useCase, new RequestCommand<>(alistarJugadores)).subscribe(subscriber);
+        AlistarJugadores alistarJugadores = new AlistarJugadores(conductores);
+        UseCaseHandler.getInstance()
+                .asyncExecutor(
+                        useCase,
+                        new RequestCommand<>(alistarJugadores))
+                .subscribe(subscriber);
+
         verify(subscriber,times(3)).onNext(eventCaptor.capture());
-
-        JugadoresCreado jugadoresCreado = (JugadoresCreado) eventCaptor.getAllValues().get(0);
-        System.out.println(jugadoresCreado.getIdCompetencia().value());
-
-        Assertions.assertEquals("1",jugadoresCreado.getIdCompetencia().value());
         Assertions.assertEquals(3,eventCaptor.getAllValues().size());
+        JugadoresCreado jugadoresCreado = (JugadoresCreado) eventCaptor.getAllValues().get(0);
+        System.out.println(jugadoresCreado.getIdJugadores().value());
     }
 
 }

@@ -2,6 +2,7 @@ package co.com.sofka.gameddd.Jugadores.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.gameddd.Jugadores.entities.Carro;
+import co.com.sofka.gameddd.Jugadores.entities.Conductor;
 import co.com.sofka.gameddd.Jugadores.values.IdConductor;
 
 public class JugadorAdicionado extends DomainEvent {
@@ -10,7 +11,7 @@ public class JugadorAdicionado extends DomainEvent {
     private final Carro carro;
 
      public JugadorAdicionado(IdConductor idConductor, String nombre, Carro carro) {
-        super("gameddd.ConductorAdicionado");
+        super("gameddd.Jugadores.events.JugadorAdicionado");
         this.nombre = nombre;
         this.carro = carro;
         this.idConductor = idConductor;
