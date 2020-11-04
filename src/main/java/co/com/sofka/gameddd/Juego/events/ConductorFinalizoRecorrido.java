@@ -6,7 +6,7 @@ public class ConductorFinalizoRecorrido extends DomainEvent {
     private String nombreConductor;
 
     public ConductorFinalizoRecorrido(String nombreConductor) {
-        super("gameddd.Juego.events.AdicionadoAlPodium");
+        super("gameddd.Juego.events.ConductorFinalizoRecorrido");
         this.nombreConductor = nombreConductor;
     }
 

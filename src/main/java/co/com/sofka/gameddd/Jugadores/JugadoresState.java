@@ -34,6 +34,9 @@ public class JugadoresState extends EventChange {
                     .findFirst()
                     .get()
                     .moverCarro();
+            turnoJugado.setDistanciaFinal(jugadores.conductores.stream().filter(conductor -> conductor.Id().value().equals(turnoJugado.getIdConductor().value()))
+                    .findFirst()
+                    .get().Carro().getRecorrido());
         });
     }
 }

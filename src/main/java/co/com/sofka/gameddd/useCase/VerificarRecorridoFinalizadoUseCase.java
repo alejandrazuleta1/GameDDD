@@ -22,8 +22,9 @@ public class VerificarRecorridoFinalizadoUseCase extends UseCase<TriggeredEvent<
         var juego = Juego.from(event.getIdJuego(),retrieveEvents());
         juego.agregarMetaPodium(event.getMeta(),event.getPodium());
 
-        if(event.getDistanciaTotal().value() >= juego.getMeta().value() && juego.verificarPodiumDisponible()){
+        if(event.getDistanciaFinal().value() >= juego.getMeta().value() && juego.verificarPodiumDisponible()){
             juego.agregarAlPodium(event.getNombreConductor());
+            juego.obtenerPodiumActualizado();
             logger.log(Level.INFO, "El carro finalizó");
         }
         emit().onSuccess(new ResponseEvents(juego.getUncommittedChanges()));

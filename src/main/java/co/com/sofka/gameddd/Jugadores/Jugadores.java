@@ -44,4 +44,14 @@ public class Jugadores extends AggregateEvent<IdJugadores> {
     public void ejecutarTurno(Conductor conductor, IdJuego idJuego, Meta meta, Podium podium) {
         appendChange(new TurnoJugado(conductor.Id(), conductor.Nombre(),conductor.Carro().getRecorrido(), idJuego, meta, podium)).apply();
     }
+
+    public void obtenerDistaciaRecorridaByConductor(IdConductor idConductor){
+        var auxConductor = this.conductores
+                .stream().filter(conductor -> conductor.Id().value().equals(idConductor.value()))
+                .findFirst()
+                .get();
+        appendChange(new RecorridoActualizado(auxConductor.Carro().getRecorrido())).apply();
+    }
+
+
 }

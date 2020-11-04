@@ -21,12 +21,14 @@ public class EjecutarTurnoUseCase extends UseCase<RequestCommand<AsignarTurno>, 
     @Override
     public void executeUseCase(RequestCommand<AsignarTurno> asignarTurnoRequestCommand) {
         var command = asignarTurnoRequestCommand.getCommand();
-        var jugadores = new Jugadores(new IdJugadores(),command.getConductorEnTurno());
-        jugadores.agregarConductor(
+        var jugadores = Jugadores.from(asignarTurnoRequestCommand.getCommand().getIdJugadores(), retrieveEvents());
+        /*jugadores.agregarConductor(
                 command.getConductorEnTurno().Id(),
                 command.getConductorEnTurno().Nombre(),
                 command.getConductorEnTurno().Carro());
+         */
         jugadores.ejecutarTurno(command.getConductorEnTurno(), command.getIdJuego(),command.getMeta(), command.getPodium());
+        jugadores.obtenerDistaciaRecorridaByConductor(command.getConductorEnTurno().Id());
         emit().onSuccess(new ResponseEvents(jugadores.getUncommittedChanges()));
     }
 }
