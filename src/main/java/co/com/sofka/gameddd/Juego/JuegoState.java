@@ -2,6 +2,7 @@ package co.com.sofka.gameddd.Juego;
 
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofka.gameddd.Juego.events.ConductorFinalizoRecorrido;
+import co.com.sofka.gameddd.Juego.events.JuegoFinalizado;
 import co.com.sofka.gameddd.Juego.events.MetaAsignada;
 import co.com.sofka.gameddd.Juego.events.PodiumAsignado;
 

@@ -4,9 +4,18 @@ import co.com.sofka.domain.generic.ValueObject;
 
 public class Podium implements ValueObject<Podium.Propiedades> {
 
-    String primerLugar;
-    String segundoLugar;
-    String tercerLugar;
+    private String primerLugar;
+    private String segundoLugar;
+    private String tercerLugar;
+
+    public Podium(String primerLugar, String segundoLugar, String tercerLugar) {
+        this.primerLugar = primerLugar;
+        this.segundoLugar = segundoLugar;
+        this.tercerLugar = tercerLugar;
+    }
+
+    public Podium() {
+    }
 
     public void agregar(String nombreConductor){
         if (primerLugar == null){

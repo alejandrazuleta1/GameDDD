@@ -7,8 +7,6 @@ import co.com.sofka.gameddd.Juego.events.PodiumActualizado;
 import co.com.sofka.gameddd.Juego.values.IdJuego;
 import co.com.sofka.gameddd.Juego.values.Meta;
 import co.com.sofka.gameddd.Juego.values.Podium;
-import co.com.sofka.gameddd.Jugadores.events.JugadorAdicionado;
-import co.com.sofka.gameddd.Jugadores.events.RecorridoActualizado;
 import co.com.sofka.gameddd.Jugadores.events.TurnoJugado;
 import co.com.sofka.gameddd.Jugadores.values.IdConductor;
 import co.com.sofka.gameddd.Jugadores.values.Recorrido;

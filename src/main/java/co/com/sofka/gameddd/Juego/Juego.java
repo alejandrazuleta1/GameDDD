@@ -2,10 +2,7 @@ package co.com.sofka.gameddd.Juego;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofka.gameddd.Juego.events.ConductorFinalizoRecorrido;
-import co.com.sofka.gameddd.Juego.events.MetaAsignada;
-import co.com.sofka.gameddd.Juego.events.PodiumActualizado;
-import co.com.sofka.gameddd.Juego.events.PodiumAsignado;
+import co.com.sofka.gameddd.Juego.events.*;
 import co.com.sofka.gameddd.Juego.values.IdJuego;
 import co.com.sofka.gameddd.Juego.values.Meta;
 import co.com.sofka.gameddd.Juego.values.Podium;
@@ -45,12 +42,16 @@ public class Juego extends AggregateEvent<IdJuego> {
     }
 
     public void obtenerPodiumActualizado(){
-        appendChange(new PodiumActualizado(podium));
+        appendChange(new PodiumActualizado(podium, idJuego()));
     }
 
     public void agregarMetaPodium(Meta meta, Podium podium){
         appendChange(new MetaAsignada(meta)).apply();
         appendChange(new PodiumAsignado(podium)).apply();
+    }
+
+    public void finalizar() {
+        appendChange(new JuegoFinalizado()).apply();
     }
 
     public IdJuego idJuego() {
