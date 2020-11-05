@@ -1,4 +1,4 @@
-package co.com.sofka.gameddd.Jugadores.comands;
+package co.com.sofka.gameddd.Jugadores.commands;
 
 import co.com.sofka.domain.generic.Command;
 import co.com.sofka.gameddd.Jugadores.entities.Conductor;

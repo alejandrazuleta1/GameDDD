@@ -2,7 +2,7 @@ package co.com.sofka.gameddd.useCase;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
-import co.com.sofka.gameddd.Jugadores.comands.AlistarJugadores;
+import co.com.sofka.gameddd.Jugadores.commands.AlistarJugadores;
 import co.com.sofka.gameddd.Jugadores.entities.Carro;
 import co.com.sofka.gameddd.Jugadores.entities.Conductor;
 import co.com.sofka.gameddd.Jugadores.events.JugadoresCreado;

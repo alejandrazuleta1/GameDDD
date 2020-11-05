@@ -4,7 +4,7 @@ import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.gameddd.Jugadores.Jugadores;
-import co.com.sofka.gameddd.Jugadores.comands.AlistarJugadores;
+import co.com.sofka.gameddd.Jugadores.commands.AlistarJugadores;
 import co.com.sofka.gameddd.Jugadores.values.IdJugadores;
 
 public class AlistarJugadoresUseCase extends UseCase<RequestCommand<AlistarJugadores>, ResponseEvents> {

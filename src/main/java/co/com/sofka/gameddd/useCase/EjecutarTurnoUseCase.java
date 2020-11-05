@@ -1,16 +1,10 @@
 package co.com.sofka.gameddd.useCase;
 
-import co.com.sofka.business.annotation.EventListener;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
-import co.com.sofka.business.support.TriggeredEvent;
-import co.com.sofka.gameddd.Juego.Juego;
-import co.com.sofka.gameddd.Juego.values.IdJuego;
 import co.com.sofka.gameddd.Jugadores.Jugadores;
-import co.com.sofka.gameddd.Jugadores.comands.AsignarTurno;
-import co.com.sofka.gameddd.Jugadores.events.JugadorEnTurnoAsignado;
-import co.com.sofka.gameddd.Jugadores.values.IdJugadores;
+import co.com.sofka.gameddd.Jugadores.commands.AsignarTurno;
 
 import java.util.logging.Logger;
 

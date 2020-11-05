@@ -1,4 +1,4 @@
-package co.com.sofka.gameddd.Jugadores.comands;
+package co.com.sofka.gameddd.Jugadores.commands;
 
 import co.com.sofka.domain.generic.Command;
 import co.com.sofka.gameddd.Juego.values.IdJuego;
@@ -8,9 +8,9 @@ import co.com.sofka.gameddd.Jugadores.entities.Conductor;
 import co.com.sofka.gameddd.Jugadores.values.IdJugadores;
 
 public class AsignarTurno implements Command {
-    private IdJugadores idJugadores;
-    private Conductor conductorEnTurno;
-    private IdJuego idJuego;
+    private final IdJugadores idJugadores;
+    private final Conductor conductorEnTurno;
+    private final IdJuego idJuego;
     private final Meta meta;
     private final Podium podium;
 

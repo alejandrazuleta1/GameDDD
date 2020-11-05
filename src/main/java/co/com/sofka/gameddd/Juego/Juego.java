@@ -5,6 +5,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.gameddd.Juego.events.*;
 import co.com.sofka.gameddd.Juego.values.IdJuego;
 import co.com.sofka.gameddd.Juego.values.Meta;
+import co.com.sofka.gameddd.Juego.values.Pista;
 import co.com.sofka.gameddd.Juego.values.Podium;
 
 import java.util.List;
@@ -13,8 +14,17 @@ public class Juego extends AggregateEvent<IdJuego> {
 
     Podium podium;
     Meta meta;
+    Pista pista;
 
-    public Juego(IdJuego entityId,Meta meta,Podium podium) {
+    public Juego(IdJuego entityId, Pista pista, Meta meta, Podium podium) {
+        super(entityId);
+        this.pista = pista;
+        this.meta = meta;
+        this.podium = podium;
+        appendChange(new JuegoCreado(entityId,meta,podium,pista));
+    }
+
+    public Juego(IdJuego entityId, Meta meta, Podium podium) {
         super(entityId);
         this.meta = meta;
         this.podium = podium;
@@ -54,6 +64,10 @@ public class Juego extends AggregateEvent<IdJuego> {
         appendChange(new JuegoFinalizado()).apply();
     }
 
+    public void asignarPista(Pista pista) {
+        appendChange(new PistaAsignada(pista)).apply();
+    }
+
     public IdJuego idJuego() {
         return this.entityId;
     }
@@ -65,4 +79,6 @@ public class Juego extends AggregateEvent<IdJuego> {
     public Podium getPodium() {
         return podium;
     }
+
+
 }

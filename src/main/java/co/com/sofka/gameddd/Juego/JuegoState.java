@@ -1,10 +1,7 @@
 package co.com.sofka.gameddd.Juego;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.com.sofka.gameddd.Juego.events.ConductorFinalizoRecorrido;
-import co.com.sofka.gameddd.Juego.events.JuegoFinalizado;
-import co.com.sofka.gameddd.Juego.events.MetaAsignada;
-import co.com.sofka.gameddd.Juego.events.PodiumAsignado;
+import co.com.sofka.gameddd.Juego.events.*;
 
 public class JuegoState extends EventChange {
 
@@ -19,6 +16,10 @@ public class JuegoState extends EventChange {
 
         apply((PodiumAsignado podiumAsignado)->{
             juego.podium = podiumAsignado.getPodium();
+        });
+
+        apply((PistaAsignada pistaAsignada)->{
+            juego.pista = pistaAsignada.getPista();
         });
     }
 }

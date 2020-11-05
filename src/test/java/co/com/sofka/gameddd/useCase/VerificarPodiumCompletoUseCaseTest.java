@@ -5,9 +5,7 @@ import co.com.sofka.business.support.TriggeredEvent;
 import co.com.sofka.gameddd.Juego.events.JuegoCreado;
 import co.com.sofka.gameddd.Juego.events.JuegoFinalizado;
 import co.com.sofka.gameddd.Juego.events.PodiumActualizado;
-import co.com.sofka.gameddd.Juego.values.IdJuego;
-import co.com.sofka.gameddd.Juego.values.Meta;
-import co.com.sofka.gameddd.Juego.values.Podium;
+import co.com.sofka.gameddd.Juego.values.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -28,7 +26,7 @@ class VerificarPodiumCompletoUseCaseTest extends  UseCaseHandleBaseTest{
         );
 
         when(repository.getEventsBy(anyString())).thenReturn(List.of(
-                new JuegoCreado(IdJuego.of("1"),new Meta(1000),new Podium())
+                new JuegoCreado(IdJuego.of("1"),new Meta(1000),new Podium(), new Pista(new IdPista("ciudad")))
         ));
 
         useCase.addRepository(repository);

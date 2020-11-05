@@ -4,9 +4,7 @@ import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.TriggeredEvent;
 import co.com.sofka.gameddd.Juego.events.JuegoCreado;
 import co.com.sofka.gameddd.Juego.events.PodiumActualizado;
-import co.com.sofka.gameddd.Juego.values.IdJuego;
-import co.com.sofka.gameddd.Juego.values.Meta;
-import co.com.sofka.gameddd.Juego.values.Podium;
+import co.com.sofka.gameddd.Juego.values.*;
 import co.com.sofka.gameddd.Jugadores.events.TurnoJugado;
 import co.com.sofka.gameddd.Jugadores.values.IdConductor;
 import co.com.sofka.gameddd.Jugadores.values.Recorrido;
@@ -34,7 +32,7 @@ class VerificarRecorridoFinalizadoUseCaseTest extends  UseCaseHandleBaseTest{
                 );
 
         when(repository.getEventsBy(anyString())).thenReturn(List.of(
-                new JuegoCreado(IdJuego.of("1"),new Meta(1000),new Podium())
+                new JuegoCreado(IdJuego.of("1"),new Meta(1000),new Podium(), new Pista(new IdPista("ciudad")))
         ));
 
         useCase.addRepository(repository);
